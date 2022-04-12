@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class GenerateTerrain : MonoBehaviour
 {
-    public Sprite tile;
+    public int dirtLayerHeight = 5;
+
+    public Sprite grass;
+    public Sprite dirt;
+    public Sprite stone;
+
+    public bool generateCaves = true;
+    public float surfaceValue = 0.25f;
     public int worldSize = 100;
-    public float noiseFreq = 0.05f;
+    public float caveFreq = 0.05f;
+    public float terrainFreq = 0.05f;
     public float heightMultiplier = 4f;
     public int heightAddition = 25;
+
     public float seed;
     public Texture2D noiseTexture;
 
@@ -23,19 +32,37 @@ public class GenerateTerrain : MonoBehaviour
     {
         for(int x = 0; x < worldSize; x++)
         {
-            float height = Mathf.PerlinNoise((x + seed) * noiseFreq, seed * noiseFreq) * heightMultiplier + heightAddition;
+            float height = Mathf.PerlinNoise((x + seed) * terrainFreq, seed * terrainFreq) * heightMultiplier + heightAddition;
 
             for(int y = 0; y < height; y++)
             {
-
-                if (noiseTexture.GetPixel(x, y).r < 0.5f)
+                Sprite tileSprite;
+                if (y < height - dirtLayerHeight)
                 {
-                    GameObject newTile = new GameObject(name = "tile");
-                    newTile.transform.parent = this.transform;
-                    newTile.AddComponent<SpriteRenderer>();
-                    newTile.GetComponent<SpriteRenderer>().sprite = tile;
-                    newTile.transform.position = new Vector2(x + 0.5f, y + 0.5f);
+                    tileSprite = stone;
+                }
+                else if(y < height - 1)
+                {
+                    tileSprite = dirt;
+                }
+                else
+                {
+                    tileSprite = grass;
+                }
 
+                if (generateCaves)
+                {
+
+
+                    if (noiseTexture.GetPixel(x, y).r > surfaceValue)
+                    {
+                        PlaceTile(tileSprite, x, y);
+
+                    }
+                }
+                else
+                {
+                    PlaceTile(tileSprite, x, y);
                 }
             }
         }
@@ -49,11 +76,21 @@ public class GenerateTerrain : MonoBehaviour
         {
             for (int y = 0; y < noiseTexture.height; y++)
             {
-                float v = Mathf.PerlinNoise(x * noiseFreq, y * noiseFreq);
+                float v = Mathf.PerlinNoise(x * caveFreq, y * caveFreq);
                 noiseTexture.SetPixel(x, y, new Color(v, v, v));
             }
         }
 
         noiseTexture.Apply();
+    }
+
+    public void PlaceTile(Sprite tileSprite, float x, float y)
+    {
+        GameObject newTile = new GameObject();
+        newTile.transform.parent = this.transform;
+        newTile.AddComponent<SpriteRenderer>();
+        newTile.GetComponent<SpriteRenderer>().sprite = tileSprite;
+        newTile.name = tileSprite.name;
+        newTile.transform.position = new Vector2(x + 0.5f, y + 0.5f);
     }
 }

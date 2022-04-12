@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 274260534}
   - component: {fileID: 274260533}
   m_Layer: 0
-  m_Name: tile
+  m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,11 +152,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f740c3b0ffb1ef4798e0d32d9f80615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tile: {fileID: 7482667652216324306, guid: b863be804e56b4f4f95d745fa6d6855d, type: 3}
+  dirtLayerHeight: 5
+  grass: {fileID: 21300000, guid: 76a1ea7abea908843bc4a53ef1b9c6f3, type: 3}
+  dirt: {fileID: 21300000, guid: 2747a7cccd099ea40b06ac7f6ba8cae0, type: 3}
+  stone: {fileID: 21300000, guid: 4c377df9b719f4a438ac8de46dab3ade, type: 3}
+  generateCaves: 1
+  surfaceValue: 0.25
   worldSize: 100
-  noiseFreq: 0.06
-  heightMultiplier: 23
-  heightAddition: 10
+  caveFreq: 0.2
+  terrainFreq: 0.25
+  heightMultiplier: 10
+  heightAddition: 9
   seed: -1162
   noiseTexture: {fileID: 1045850539}
 --- !u!4 &274260534
@@ -209,7 +215,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.24247222, g: 0.5024998, b: 0.509434, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
