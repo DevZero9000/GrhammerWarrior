@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public LayerMask layerMask;
 
     public float moveSpeed;
     public float jumpForce;
@@ -11,6 +12,10 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+
+    public float horizontal;
+    public bool hit;
+    public bool place;
 
     private void Start()
     {
@@ -46,6 +51,32 @@ public class PlayerController : MonoBehaviour
                 movement.y = jumpForce;
         }
 
+        if (FootRaycast() && !HeadRaycast() && movement.x != 0)
+        {
+            if (onGround)
+                movement.y = jumpForce * 0.6f;
+        }
+
         rb.velocity = movement;
     }
+
+    public bool FootRaycast()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position - (Vector3.up * 0.5f), -Vector2.right * transform.localScale.x, 1f, layerMask);
+        return hit;
+    }
+
+    public bool HeadRaycast()
+    {
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3.up * 0.5f), -Vector2.right * transform.localScale.x, 1f, layerMask);
+        return hit;
+    }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if()
+    //    Destroy();
+    //}
+
 }

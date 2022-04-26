@@ -9,7 +9,9 @@ public class GenerateTerrain : MonoBehaviour
     public Sprite grass;
     public Sprite dirt;
     public Sprite stone;
+    public Sprite coin;
 
+    public int coinChance;
     public bool generateCaves = true;
     public float surfaceValue = 0.25f;
     public int worldSize = 100;
@@ -48,6 +50,13 @@ public class GenerateTerrain : MonoBehaviour
                 else
                 {
                     tileSprite = grass;
+
+                    int c = Random.Range(0, coinChance);
+
+                    if (c == 1)
+                    {
+                        GenerateCoin(x, y + 1);
+                    }
                 }
 
                 if (generateCaves)
@@ -82,6 +91,11 @@ public class GenerateTerrain : MonoBehaviour
         }
 
         noiseTexture.Apply();
+    }
+
+    void GenerateCoin(int x, int y)
+    {
+        PlaceTile(coin, x, y, true);
     }
 
     public void PlaceTile(Sprite tileSprite, int x, int y, bool backgroundElement)
