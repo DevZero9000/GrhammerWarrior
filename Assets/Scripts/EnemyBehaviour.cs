@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    [SerializeField] private float damage;
+
     public float speed;
     public float distance;
 
@@ -83,4 +85,12 @@ public class EnemyBehaviour : MonoBehaviour
     //    walkSpeed *= -1;
     //    mustPatrol = true;
     //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            collision.GetComponent<Health>().TakeDamage(damage);
+        }
+    }
 }

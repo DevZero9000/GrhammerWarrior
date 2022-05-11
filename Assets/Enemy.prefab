@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd38e91c8964fd40b81d3c39c6fd5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
   speed: 2
   distance: 2
   groundDetection: {fileID: 875213683751720309}
