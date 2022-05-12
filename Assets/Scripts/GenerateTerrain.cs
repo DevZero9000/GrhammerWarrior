@@ -10,6 +10,7 @@ public class GenerateTerrain : MonoBehaviour
     public Sprite dirt;
     public Sprite stone;
     public Sprite coin;
+    public GameObject coinObject;
 
     public int coinChance;
     public bool generateCaves = true;
@@ -95,7 +96,9 @@ public class GenerateTerrain : MonoBehaviour
 
     void GenerateCoin(int x, int y)
     {
-        PlaceTile(coin, x, y, true);
+        //PlaceTile(coin, x, y, true);
+        Instantiate(coinObject, new Vector2(x + 0.5f, y + 0.5f), Quaternion.identity);
+
     }
 
     public void PlaceTile(Sprite tileSprite, int x, int y, bool backgroundElement)

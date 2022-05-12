@@ -343,6 +343,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Health/Health.cs"
 "Assets/Health/HealthBar.cs"
+"Assets/playerScore.cs"
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/EnemyBehaviour.cs"
 "Assets/Scripts/EnemySpawner.cs"

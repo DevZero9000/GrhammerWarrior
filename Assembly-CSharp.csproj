@@ -61,13 +61,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\GenerateTerrain.cs" />
+    <Compile Include="Assets\Scripts\RetryGame.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Health\Health.cs" />
     <Compile Include="Assets\Health\HealthBar.cs" />
-    <Compile Include="Assets\Scripts\RetryGame.cs" />
+    <Compile Include="Assets\playerScore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

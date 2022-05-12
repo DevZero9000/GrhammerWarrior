@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject Enemy;
+    public GameObject Enemy, Coin;
     public int enemyCount;
     float randX;
     Vector2 whereToSpawn;
@@ -22,6 +22,7 @@ public class EnemySpawner : MonoBehaviour
             enemyCount++;
             randX = Random.Range(23f, 96f);
             whereToSpawn = new Vector2(randX, transform.position.y);
+            //Instantiate(Coin, whereToSpawn, Quaternion.identity);
             Instantiate(Enemy, whereToSpawn, Quaternion.identity);
 
         }

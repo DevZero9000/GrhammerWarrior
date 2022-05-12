@@ -159,6 +159,7 @@ MonoBehaviour:
   dirt: {fileID: 21300000, guid: 2747a7cccd099ea40b06ac7f6ba8cae0, type: 3}
   stone: {fileID: 21300000, guid: 4c377df9b719f4a438ac8de46dab3ade, type: 3}
   coin: {fileID: -6992485916031732992, guid: 5e8adac0a8c89664ea62f3e6922d0fed, type: 3}
+  coinObject: {fileID: 3587269952377923253, guid: 4e355b35b3eed7d418d6ae86d39aa1ae, type: 3}
   coinChance: 10
   generateCaves: 1
   surfaceValue: 0.3
@@ -264,7 +265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -365.33, y: 128.05002}
+  m_AnchoredPosition: {x: -442, y: 131.05002}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &377186637
@@ -433,7 +434,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 27.16
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -475,7 +476,7 @@ GameObject:
   - component: {fileID: 663746297}
   - component: {fileID: 663746296}
   m_Layer: 5
-  m_Name: coinsAmount
+  m_Name: coinAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -497,7 +498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -228, y: 128.05002}
+  m_AnchoredPosition: {x: -307, y: 131.05002}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &663746296
@@ -583,7 +584,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 103.90167, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -631,7 +632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: 211}
+  m_AnchoredPosition: {x: -329, y: 214}
   m_SizeDelta: {x: 447.2008, y: 46.7279}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &777498135
@@ -758,7 +759,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: 211}
+  m_AnchoredPosition: {x: -329, y: 214}
   m_SizeDelta: {x: 447.2008, y: 46.7279}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1106236224
@@ -1050,6 +1051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 7530909149245452822, guid: 1afe7a8afb7ad6d41b6d8f9a5d8fc438, type: 3}
+  Coin: {fileID: 3587269952377923253, guid: 4e355b35b3eed7d418d6ae86d39aa1ae, type: 3}
   enemyCount: 0
 --- !u!4 &1855976286
 Transform:
@@ -1072,6 +1074,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2831288148181618772, guid: 756f098de45f5cd41b7b6d38b8972084, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5472152
+      objectReference: {fileID: 0}
+    - target: {fileID: 2831288148181618772, guid: 756f098de45f5cd41b7b6d38b8972084, type: 3}
+      propertyPath: m_Size.y
+      value: 2.284237
+      objectReference: {fileID: 0}
+    - target: {fileID: 2831288148181618772, guid: 756f098de45f5cd41b7b6d38b8972084, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.055198073
+      objectReference: {fileID: 0}
+    - target: {fileID: 2831288148181618772, guid: 756f098de45f5cd41b7b6d38b8972084, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.16139412
+      objectReference: {fileID: 0}
     - target: {fileID: 2831288148181620649, guid: 756f098de45f5cd41b7b6d38b8972084, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1140,3 +1158,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+--- !u!114 &2831288147818036311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2831288147818036309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ba2bfdd596d2049b6eacaefaca7a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
