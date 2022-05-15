@@ -10,10 +10,12 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public bool onGround;
 
+    public Joystick joystick;
+
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
 
-    public float horizontal;
+    public float horizontal = 0f;
     public bool hit;
     public bool place;
 
@@ -32,11 +34,26 @@ public class PlayerController : MonoBehaviour
         if (col.CompareTag("Ground"))
             onGround = false;
     }
+
+    //void Update()
+    //{
+    //    if (joystick.Horizontal >= 2f)
+    //    {
+    //        horizontal = moveSpeed;
+    //    }
+    //    else if (joystick.Horizontal <= -.2f)
+    //    {
+    //        horizontal = -moveSpeed;
+    //    }
+    //    else
+    //    {
+    //        horizontal = 0f;
+    //    }
     private void FixedUpdate()
     {
-        float horizontal = Input.GetAxis("Horizontal");
+        float horizontal = joystick.Horizontal;
         float jump = Input.GetAxisRaw("Jump");
-        float vertical = Input.GetAxisRaw("Vertical");
+        float vertical = joystick.Vertical;
 
         Vector2 movement = new Vector2(horizontal * moveSpeed, rb.velocity.y);
 
@@ -45,7 +62,7 @@ public class PlayerController : MonoBehaviour
         else if (horizontal < 0)
             transform.localScale = new Vector3(1, 1, 1);
 
-        if(vertical > 0.1f || jump > 0.1f)
+        if (vertical > 0.1f || jump > 0.1f)
         {
             if (onGround)
                 movement.y = jumpForce;
