@@ -77,6 +77,9 @@
     <Compile Include="Assets\Health\Health.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Health\HealthBar.cs" />
+    <Compile Include="Assets\PlayerCombat.cs" />
+    <Compile Include="Assets\EnemyHealth.cs" />
+    <Compile Include="Assets\Enemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
