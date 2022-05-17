@@ -1,0 +1,28 @@
+Correct the following sentence, 
+Peter to go to meet his friends
++Goes
++Gone 
++Went
++Has go
++C
+
+#She___English with her friends
++Speaks
++Spoken
++Speak
++Spoke
++D
+
+#Jenny_____very late as well
++Sleep
++Slep
++Slept
++Sleeping
++C
+
+#Benny_____about a year ago
++Quit
++Quitted
++Quiting
++Quited
++A

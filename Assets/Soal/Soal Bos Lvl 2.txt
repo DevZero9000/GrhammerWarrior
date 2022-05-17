@@ -1,0 +1,27 @@
+I have worked very hard since ___
++Three weeks
++Two weeks
++Last week
++Two days
++C
+
+#What time ___ the film ___?
++Is/starting
++Do/start
++Does/starts
++Does/start
++D
+
+#He ___ late and that's really annoying.
++Always comes
++Always come
++Is always coming
++Is always come
++A
+
+#The airplane ___ at 7 a.m.
++Arrives
++Arrive
++Is arriving
++Has arrived
++A

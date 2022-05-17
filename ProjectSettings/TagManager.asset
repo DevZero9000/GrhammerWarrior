@@ -9,6 +9,7 @@ TagManager:
   - Coin
   - Door
   - Boss
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Coin
   - Door
   - Boss
-  - 
+  - Wall
   - 
   - 
   - 

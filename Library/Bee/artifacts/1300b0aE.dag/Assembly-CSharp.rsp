@@ -343,6 +343,7 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/VSSettingsProvider.ref.dll"
+"Assets/Boss.cs"
 "Assets/Enemy.cs"
 "Assets/EnemyHealth.cs"
 "Assets/Health/Health.cs"
@@ -365,6 +366,7 @@
 "Assets/Scripts/RetryGame.cs"
 "Assets/Scripts/SceneLoader.cs"
 "Assets/Scripts/TouchController.cs"
+"Assets/Soal.cs"
 -langversion:8.0
 
 /deterministic

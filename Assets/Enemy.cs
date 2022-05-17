@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int maxHealth = 1;
-    int currentHealth;
+    public int currentHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
             Die();
         }
     }
-    void Die()
+    public void Die()
     {
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
