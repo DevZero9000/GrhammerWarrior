@@ -18,7 +18,7 @@ public class SceneLoader : MonoBehaviour
 
     public void RetryLvl1()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level 1");
     }
 
     //public void SelectLevel()

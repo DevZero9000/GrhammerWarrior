@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Enemy
   - Coin
+  - Door
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -18,8 +20,8 @@ TagManager:
   - Enemy
   - Ground
   - Coin
-  - 
-  - 
+  - Door
+  - Boss
   - 
   - 
   - 
@@ -49,4 +51,7 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 3124415783
+    locked: 0
+  - name: Bg
+    uniqueID: 1640184861
     locked: 0

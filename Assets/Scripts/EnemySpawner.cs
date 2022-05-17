@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject Enemy, Coin;
+    public GameObject Enemy;
     public int enemyCount;
     float randX;
     Vector2 whereToSpawn;
@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void Update()
     {
-        if(enemyCount < 6)
+        if(enemyCount < 5)
         {
             enemyCount++;
             randX = Random.Range(23f, 96f);

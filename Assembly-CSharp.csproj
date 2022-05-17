@@ -63,6 +63,7 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\GenerateTerrain.cs" />
+    <Compile Include="Assets\Enemy.cs" />
     <Compile Include="Assets\Scripts\RetryGame.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\playerScore.cs" />
@@ -76,10 +77,10 @@
     <Compile Include="Assets\Scripts\TouchController.cs" />
     <Compile Include="Assets\Health\Health.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
-    <Compile Include="Assets\Health\HealthBar.cs" />
     <Compile Include="Assets\PlayerCombat.cs" />
     <Compile Include="Assets\EnemyHealth.cs" />
-    <Compile Include="Assets\Enemy.cs" />
+    <Compile Include="Assets\Health\HealthBar.cs" />
+    <Compile Include="Assets\nextLevelDoor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
