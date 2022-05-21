@@ -32,8 +32,9 @@ public class Soal : MonoBehaviour
     int jwbBenar, jwbSalah;
     float  nilai;
 
-    //public GameObject panel;
-    //public GameObject imgPenilaian, imgHasil;
+    public GameObject panel;
+    public GameObject imgPenilaian;
+    //public GameObject imgHasil;
     //public Text txtHasil;
 
     // Start is called before the first frame update
@@ -95,13 +96,19 @@ public class Soal : MonoBehaviour
         {
             isHasil = true;
         }
+        else if(maxSoal == 0)
+        {
+            panel.SetActive(false);
+        }
         else
         {
             indexSoal++;
             ambilSoal = true;
+            panel.SetActive(true);
+
         }
 
-        //panel.SetActive(true);
+        
     }
 
     //private float HitungNilai()
@@ -109,66 +116,67 @@ public class Soal : MonoBehaviour
     //    return nilai = (float)jwbBenar / maxSoal * 100;
     //}
 
-    //public Text txtPenilaian;
+    public GameObject BenarObj;
+    public GameObject SalahObj;
     private void CheckJawaban(char huruf)
     {
-        //string penilaian; 
+        
 
         if (huruf.Equals(kunciJ))
         {
+            BenarObj.SetActive(true);
+            SalahObj.SetActive(false);
             GameObject.Find("Boss").GetComponent<Boss>().TakeDamage(25);
-            //penilaian = "Benar!";
             //jwbBenar++;
         }
         else
         {
-             GameObject.Find("Player").GetComponent<Health>().TakeDamage(1);
-            //penilaian = "Salah!";
+            SalahObj.SetActive(true);
+            BenarObj.SetActive(false);
+            GameObject.Find("Player").GetComponent<Health>().TakeDamage(1);
             //jwbSalah++;
         }
 
-        //txtPenilaian.text = penilaian;
     }
 
     // Update is called once per frame
     void Update()
     {
-        TampilkanSoal();
-        //if (panel.activeSelf)
-        //{
-        //    durasiPenilaian -= Time.deltaTime;
+        //TampilkanSoal();
+        if (panel.activeSelf)
+        {
+            durasiPenilaian -= Time.deltaTime;
 
-        //    if (isHasil)
-        //    {
-        //        imgPenilaian.SetActive(true);
-        //        imgHasil.SetActive(false);
+            if (isHasil)
+            {
+                imgPenilaian.SetActive(true);
+                //imgHasil.SetActive(false);
 
-        //        if (durasiPenilaian <= 0)
-        //        {
-        //            txtHasil.text = "Jumlah benar : " + jwbBenar + "\nJumlah Salah : " + jwbSalah + "\n\nNilai : " + HitungNilai();
+                if (durasiPenilaian <= 0)
+                {
+                    //txtHasil.text = "Jumlah benar : " + jwbBenar + "\nJumlah Salah : " + jwbSalah + "\n\nNilai : " + HitungNilai();
 
-        //            imgPenilaian.SetActive(false);
-        //            imgHasil.SetActive(true);
+                    imgPenilaian.SetActive(false);
+                    //imgHasil.SetActive(true);
 
-        //            durasiPenilaian = 0;
+                    durasiPenilaian = 0;
 
-        //        }
-        //    } 
-        //    else
-        //    {
-        //        imgPenilaian.SetActive(true);
-        //        imgHasil.SetActive(false);
+                }
+            }
+            else
+            {
+                imgPenilaian.SetActive(true);
+                //imgHasil.SetActive(false);
 
-        //        if (durasiPenilaian <= 0)
-        //        {
-        //            panel.SetActive(false);
-        //            durasiPenilaian = durasi;
+                if (durasiPenilaian <= 0)
+                {
+                    panel.SetActive(false);
+                    durasiPenilaian = durasi;
 
-
-        //        }
-        //    }
-        //}
-
+                    TampilkanSoal();
+                }
+            }
+        }
 
     }
 }
