@@ -346,6 +346,7 @@
 "Assets/Boss.cs"
 "Assets/Enemy.cs"
 "Assets/EnemyHealth.cs"
+"Assets/Foggy Mountains Background/Demo/BackgroundHelper.cs"
 "Assets/Health/Health.cs"
 "Assets/Health/HealthBar.cs"
 "Assets/Joystick Pack/Examples/JoystickPlayerExample.cs"
