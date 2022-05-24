@@ -296,6 +296,9 @@
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.VisualScripting.Flow.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.VisualScripting.State.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/UnityEngine.UI.ref.dll"
+"Assets/Boss.cs"
+"Assets/Enemy.cs"
+"Assets/EnemyHealth.cs"
 "Assets/Health/Health.cs"
 "Assets/Health/HealthBar.cs"
 "Assets/Joystick Pack/Examples/JoystickPlayerExample.cs"
@@ -305,7 +308,10 @@
 "Assets/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs"
 "Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs"
 "Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs"
+"Assets/nextLevelDoor.cs"
+"Assets/PlayerCombat.cs"
 "Assets/playerScore.cs"
+"Assets/Scripts/BackgroundHelper.cs"
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/EnemyBehaviour.cs"
 "Assets/Scripts/EnemySpawner.cs"
@@ -314,6 +320,7 @@
 "Assets/Scripts/RetryGame.cs"
 "Assets/Scripts/SceneLoader.cs"
 "Assets/Scripts/TouchController.cs"
+"Assets/Soal.cs"
 -langversion:8.0
 
 /deterministic

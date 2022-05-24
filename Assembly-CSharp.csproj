@@ -59,6 +59,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BackgroundHelper.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
@@ -83,7 +84,6 @@
     <Compile Include="Assets\PlayerCombat.cs" />
     <Compile Include="Assets\EnemyHealth.cs" />
     <Compile Include="Assets\Health\HealthBar.cs" />
-    <Compile Include="Assets\Foggy Mountains Background\Demo\BackgroundHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
