@@ -126,7 +126,7 @@ TextureImporter:
       213: 554025432751603463
     second: Blackhand sprite sheets_40
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -147,6 +147,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -185,6 +186,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -1120,6 +1122,48 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Blackhand sprite sheets_0: -2749364603991835241
+      Blackhand sprite sheets_1: 6569074294665238969
+      Blackhand sprite sheets_10: -8150204145088466389
+      Blackhand sprite sheets_11: 5135619313408159147
+      Blackhand sprite sheets_12: -7452066487047611483
+      Blackhand sprite sheets_13: -3800053548364100104
+      Blackhand sprite sheets_14: -5497548103432524793
+      Blackhand sprite sheets_15: 9070750621200071896
+      Blackhand sprite sheets_16: -6544634845741673054
+      Blackhand sprite sheets_17: 7432073158391627162
+      Blackhand sprite sheets_18: -3118013058086350215
+      Blackhand sprite sheets_19: -5788477633364667519
+      Blackhand sprite sheets_2: -3201450448115199481
+      Blackhand sprite sheets_20: 4803503225900022573
+      Blackhand sprite sheets_21: -1256556127295158951
+      Blackhand sprite sheets_22: -5255902023663469371
+      Blackhand sprite sheets_23: 6292759608934550366
+      Blackhand sprite sheets_24: -7737377297320818798
+      Blackhand sprite sheets_25: -3202950261111241912
+      Blackhand sprite sheets_26: 8788892206194651415
+      Blackhand sprite sheets_27: -8291962047962504113
+      Blackhand sprite sheets_28: 344766515048490688
+      Blackhand sprite sheets_29: 5589117963318262512
+      Blackhand sprite sheets_3: -2956550854747988349
+      Blackhand sprite sheets_30: 8718641835642834277
+      Blackhand sprite sheets_31: -389212217700751265
+      Blackhand sprite sheets_32: 5154463096450653396
+      Blackhand sprite sheets_33: -4279755881364607466
+      Blackhand sprite sheets_34: 7510430072465194163
+      Blackhand sprite sheets_35: -2891802355489861343
+      Blackhand sprite sheets_36: 3717058386447380728
+      Blackhand sprite sheets_37: -8424634623726056807
+      Blackhand sprite sheets_38: 2304050243562082166
+      Blackhand sprite sheets_39: 7333289853505443414
+      Blackhand sprite sheets_4: 6740584856132385081
+      Blackhand sprite sheets_40: 554025432751603463
+      Blackhand sprite sheets_5: 4869471479889016347
+      Blackhand sprite sheets_6: -5131778338247930112
+      Blackhand sprite sheets_7: -5526465254124465336
+      Blackhand sprite sheets_8: 5583784213198459436
+      Blackhand sprite sheets_9: 839833664937705891
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

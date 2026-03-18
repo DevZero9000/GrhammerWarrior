@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine.Experimental.Rendering;
 using UnityEvent = UnityEngine.Event;
 
 namespace UnityEditor.U2D.Sprites
@@ -92,10 +93,12 @@ namespace UnityEditor.U2D.Sprites
             public readonly GUIContent yLabel = EditorGUIUtility.TextContent("Y");
             public readonly GUIContent offsetLabel = EditorGUIUtility.TrTextContent("Offset");
             public readonly GUIContent paddingLabel = EditorGUIUtility.TrTextContent("Padding");
-            public readonly GUIContent automaticSlicingHintLabel = EditorGUIUtility.TrTextContent("To obtain more accurate slicing results, manual slicing is recommended!");
+            public readonly GUIContent automaticSlicingHintLabel = EditorGUIUtility.TrTextContent("Texture is in compressed format. For better result please use manual slicing.", "Compressed textures may have artifacts that will affect the automatic slicing result. It is recommended to use manual slicing for better result.");
             public readonly GUIContent customPivotLabel = EditorGUIUtility.TrTextContent("Custom Pivot");
             public readonly GUIContent keepEmptyRectsLabel = EditorGUIUtility.TrTextContent("Keep Empty Rects");
             public readonly GUIContent isAlternateLabel = EditorGUIUtility.TrTextContent("Is Alternate");
+
+            public readonly string deleteExistingMessage = L10n.Tr("The Delete Existing slicing method will destroy the current Sprites and recreate them from scratch, once you select Apply. This operation could cause the Sprite references to get lost. Consider using Smart or Safe slicing methods instead.");
         }
 
         internal List<Rect> GetPotentialRects()
@@ -142,7 +145,7 @@ namespace UnityEditor.U2D.Sprites
             m_TextureDataProvider = dataProvider;
 
             buttonRect = GUIUtility.GUIToScreenRect(buttonRect);
-            float windowHeight = 195;
+            const float windowHeight = 255;
             var windowSize = new Vector2(300, windowHeight);
             ShowAsDropDown(buttonRect, windowSize);
 
@@ -213,6 +216,8 @@ namespace UnityEditor.U2D.Sprites
             {
                 Undo.RegisterCompleteObjectUndo(s_Setting, "Change slicing type");
                 s_Setting.slicingType = slicingType;
+
+                UpdateToDefaultAutoSliceMethod();
                 RectSettingsDirty();
             }
             switch (slicingType)
@@ -240,12 +245,21 @@ namespace UnityEditor.U2D.Sprites
                 s_Setting.autoSlicingMethod = slicingMethod;
             }
 
+            if (s_Setting.autoSlicingMethod == (int)SpriteFrameModule.AutoSlicingMethod.DeleteAll)
+                EditorGUILayout.HelpBox(s_Styles.deleteExistingMessage, MessageType.Warning);
+
             GUILayout.FlexibleSpace();
             GUILayout.BeginHorizontal();
             GUILayout.Space(EditorGUIUtility.labelWidth + 4);
             if (GUILayout.Button(s_Styles.sliceButtonLabel))
                 DoSlicing();
+
             GUILayout.EndHorizontal();
+        }
+
+        private static void UpdateToDefaultAutoSliceMethod()
+        {
+            s_Setting.autoSlicingMethod = (int)SpriteFrameModule.AutoSlicingMethod.DeleteAll;
         }
 
         private void DoSlicing()
@@ -378,8 +392,8 @@ namespace UnityEditor.U2D.Sprites
         private void OnAutomaticGUI()
         {
             float spacing = 38f;
-            var texture = m_TextureDataProvider.GetReadableTexture2D();
-            if (texture != null && UnityEditor.TextureUtil.IsCompressedTextureFormat(texture.format))
+            var texture = m_TextureDataProvider.texture;
+            if (texture != null && GraphicsFormatUtility.IsCompressedFormat(texture.graphicsFormat))
             {
                 EditorGUILayout.LabelField(s_Styles.automaticSlicingHintLabel, s_Styles.notice);
                 spacing -= 31f;
